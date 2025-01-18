@@ -6,7 +6,7 @@ const SearchBox = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className={s.box}>
       <p>Find contact by name</p>
       <input
         type="text"

@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #213555;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,6 +19,7 @@ body {
   padding: 20px;
   max-width: 1280px;
   margin: 0 auto;
+  color: #F5EFE7;
 }
 
 h1,
@@ -29,6 +30,7 @@ h5,
 h6,
 p {
   margin: 0;
+  text-align: center;
 }
 
 ul,
