@@ -1,7 +1,13 @@
+import { useDispatch } from "react-redux";
 import s from "./contact.module.css";
 import { RiContactsFill, RiPhoneFill } from "react-icons/ri";
+import { deleteContact } from "../../redux/contactsSlice";
 
-const Contact = ({ name, number, deleteContact, id }) => {
+const Contact = (item) => {
+  const dispatch = useDispatch();
+  // console.log("Contact-item: ", item);
+  const handleDelete = () => dispatch(deleteContact(item.id));
+
   return (
     <li className={s.item}>
       <div className={s.text_box}>
@@ -9,18 +15,18 @@ const Contact = ({ name, number, deleteContact, id }) => {
           <span>
             <RiContactsFill />
           </span>
-          <p>{name}</p>
+          <p>{item.name}</p>
         </div>
         <div className={s.text}>
           <span>
             <RiPhoneFill />
           </span>
-          <p>{number}</p>
+          <p>{item.number}</p>
         </div>
       </div>
       <button
         className={s.button}
-        onClick={() => deleteContact(id)}
+        onClick={handleDelete}
       >
         Delete
       </button>

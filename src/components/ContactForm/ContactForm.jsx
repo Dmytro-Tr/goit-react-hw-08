@@ -2,10 +2,29 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
 import * as Yup from "yup";
 import s from "./contactForm.module.css";
+import { useDispatch } from "react-redux";
+import { addContact } from "../../redux/contactsSlice";
+import { nanoid } from "@reduxjs/toolkit";
 
-const ContactForm = ({ addContact }) => {
+const ContactForm = () => {
   const nameId = useId();
   const numberId = useId();
+
+  const dispatch = useDispatch();
+
+  const initialValues = { name: "", number: "", id: "" };
+
+  const onSubmit = (values, options) => {
+    const newContact = {
+      id: nanoid(),
+      name: values.name,
+      number: values.number,
+    };
+    // console.log("newContact: ", newContact);
+
+    dispatch(addContact(newContact));
+    options.resetForm();
+  };
 
   const feedbackSchema = Yup.object().shape({
     name: Yup.string()
@@ -20,8 +39,8 @@ const ContactForm = ({ addContact }) => {
 
   return (
     <Formik
-      initialValues={{ name: "", number: "", id: "" }}
-      onSubmit={addContact}
+      initialValues={initialValues}
+      onSubmit={onSubmit}
       validationSchema={feedbackSchema}
     >
       <Form className={s.form}>

@@ -1,6 +1,10 @@
+import { useDispatch } from "react-redux";
 import s from "./searchbox.module.css";
+import { changeFilter } from "../../redux/filtersSlice";
 
-const SearchBox = ({ value, onFilter }) => {
+const SearchBox = () => {
+  const dispatch = useDispatch();
+
   return (
     <div>
       <p>Find contact by name</p>
@@ -8,8 +12,7 @@ const SearchBox = ({ value, onFilter }) => {
         type="text"
         className={s.input}
         placeholder="What name do you want to find?"
-        value={value}
-        onChange={onFilter}
+        onChange={(e) => dispatch(changeFilter(e.target.value))}
       />
     </div>
   );
