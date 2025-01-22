@@ -13,11 +13,8 @@ const getVisibleContacts = (contacts, statusFilter) => {
 
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
-  // console.log("contacts: ", contacts);
   const statusFilter = useSelector(selectNameFilter);
-  // console.log("statusFilter: ", statusFilter);
   const filterData = getVisibleContacts(contacts, statusFilter);
-  // console.log("filterData: ", filterData);
 
   return (
     <div>
