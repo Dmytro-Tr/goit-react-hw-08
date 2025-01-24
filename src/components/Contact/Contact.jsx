@@ -1,11 +1,10 @@
 import { useDispatch } from "react-redux";
 import s from "./contact.module.css";
 import { RiContactsFill, RiPhoneFill } from "react-icons/ri";
-import { deleteContact } from "../../redux/contactsSlice";
+import { deleteContact } from "../../redux/contactsOps";
 
 const Contact = (item) => {
   const dispatch = useDispatch();
-  // console.log("Contact-item: ", item);
   const handleDelete = () => dispatch(deleteContact(item.id));
 
   return (
