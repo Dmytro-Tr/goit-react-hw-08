@@ -5,7 +5,6 @@ import s from "./contactForm.module.css";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { addContact } from "../../redux/contacts/operations";
-// import { addContact } from "../../redux/contactsOps";
 
 const ContactForm = () => {
   const nameId = useId();
