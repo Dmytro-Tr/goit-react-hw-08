@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.home,
+.contacts {
+  text-decoration: none;
+  color: #F5EFE7;
+  padding: 10px;
+}
+
+.home {}
+
+.contacts {}
