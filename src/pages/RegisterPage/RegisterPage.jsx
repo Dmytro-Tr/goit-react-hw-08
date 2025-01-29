@@ -1,18 +1,27 @@
 import { Field, Form, Formik } from "formik";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { registerThunk } from "../../redux/auth/operations";
 
 const RegisterPage = () => {
   const initialValues = {
     password: "",
     email: "",
+    name: "",
   };
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const handleSubmit = (values, option) => {
     console.log(values);
+    dispatch(registerThunk(values))
+      .unwrap()
+      .then(() => navigate("/"));
     option.resetForm();
   };
 
   return (
     <div>
-      {" "}
       <Formik
         initialValues={initialValues}
         onSubmit={handleSubmit}
@@ -34,6 +43,9 @@ const RegisterPage = () => {
             />
           </label>
           <button type="submit">Login</button>
+          <p>
+            You already have account? <Link to="/login">Login!</Link>
+          </p>
         </Form>
       </Formik>
     </div>
