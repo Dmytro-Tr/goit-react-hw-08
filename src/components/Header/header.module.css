@@ -5,15 +5,26 @@
   justify-content: space-between;
   font-size: 24px;
   font-weight: 600;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+  background-color: rgb(57, 70, 91)
 }
 
-.home,
-.contacts {
+.link {
   text-decoration: none;
   color: #F5EFE7;
-  padding: 10px;
+  /* padding: 10px; */
+  transition: color 200ms ease-in-out;
+  cursor: pointer;
 }
 
-.home {}
+.active {
+  /* padding: 10px; */
+  color: #e0cbaf;
+  text-decoration: underline;
+}
 
-.contacts {}
+.box {
+  display: flex;
+  gap: 20px;
+}
