@@ -27,4 +27,24 @@ export const loginThunk = createAsyncThunk(
   }
 );
 
+export const logoutThunk = createAsyncThunk(
+  "/users/logout",
+  async (_, thunkApi) => {
+    const token = thunkApi.getState().auth.token;
+    try {
+      const { data } = await axios.post(
+        "/users/logout",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.message);
+    }
+  }
+);
+
 // saliwan321@mail.com

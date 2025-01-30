@@ -1,16 +1,20 @@
 import { NavLink } from "react-router-dom";
 import s from "./header.module.css";
 import clsx from "clsx";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectIsLogggedIn, selectUser } from "../../redux/auth/selectors";
+import { logoutThunk } from "../../redux/auth/operations";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
 };
 
+// saliwan321@mail.com
+
 const Header = () => {
   const isLoggedIn = useSelector(selectIsLogggedIn);
   const user = useSelector(selectUser);
+  const dispatch = useDispatch();
   return (
     <div className={s.wrapper}>
       <NavLink
@@ -28,7 +32,7 @@ const Header = () => {
           Contacts
         </NavLink>
         {isLoggedIn ? (
-          <button>Logout</button>
+          <button onClick={() => dispatch(logoutThunk())}>Logout</button>
         ) : (
           <>
             <NavLink
