@@ -11,7 +11,7 @@ const LoginPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSubmit = (values, option) => {
-    console.log(values);
+    // console.log(values);
     dispatch(loginThunk(values))
       .unwrap()
       .then(() => navigate("/"));
