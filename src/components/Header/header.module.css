@@ -22,13 +22,11 @@
 .link {
   text-decoration: none;
   color: #F5EFE7;
-  /* padding: 10px; */
   transition: color 200ms ease-in-out;
   cursor: pointer;
 }
 
 .active {
-  /* padding: 10px; */
   color: #e0cbaf;
   text-decoration: underline;
 }
@@ -39,25 +37,4 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-}
-
-.title {
-  font-size: 24px;
-}
-
-.btn_logout {
-  padding: 8px 8px;
-  display: block;
-  margin: 0 auto;
-  background-color: #F5EFE7;
-  color: #213555;
-  font-weight: 600;
-  border: 1px solid #000;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
-  transition: background-color 250ms ease-in-out;
-}
-
-.btn_logout:hover {
-  background-color: #D8C4B6;
 }

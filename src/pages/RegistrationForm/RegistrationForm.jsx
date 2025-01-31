@@ -1,18 +1,20 @@
 import { Field, Form, Formik } from "formik";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { loginThunk } from "../../redux/auth/operations";
+import { registerThunk } from "../../redux/auth/operations";
 
-const LoginPage = () => {
+const RegistrationForm = () => {
   const initialValues = {
     password: "",
     email: "",
+    name: "",
   };
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSubmit = (values, option) => {
-    // console.log(values);
-    dispatch(loginThunk(values))
+    console.log(values);
+    dispatch(registerThunk(values))
       .unwrap()
       .then(() => navigate("/"));
     option.resetForm();
@@ -26,6 +28,10 @@ const LoginPage = () => {
       >
         <Form>
           <label>
+            <span>Name:</span>
+            <Field name="name" />
+          </label>
+          <label>
             <span>Email:</span>
             <Field name="email" />
           </label>
@@ -38,8 +44,7 @@ const LoginPage = () => {
           </label>
           <button type="submit">Login</button>
           <p>
-            You do not have account?{" "}
-            <Link to="/register">Lets create one!</Link>
+            You already have account? <Link to="/login">Login!</Link>
           </p>
         </Form>
       </Formik>
@@ -47,4 +52,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegistrationForm;

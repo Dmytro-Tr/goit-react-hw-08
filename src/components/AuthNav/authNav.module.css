@@ -1,0 +1,18 @@
+.link {
+  text-decoration: none;
+  color: #F5EFE7;
+  transition: color 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.active {
+  color: #e0cbaf;
+  text-decoration: underline;
+}
+
+.home_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}

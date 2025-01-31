@@ -1,24 +1,21 @@
-import { NavLink } from "react-router-dom";
 import s from "./header.module.css";
-import clsx from "clsx";
-import { useDispatch, useSelector } from "react-redux";
-import { selectIsLogggedIn, selectUser } from "../../redux/auth/selectors";
-import { logoutThunk } from "../../redux/auth/operations";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../../redux/auth/selectors";
+import UserMenu from "../UserMenu/UserMenu";
+import AuthNav from "../AuthNav/AuthNav";
 
-const buildLinkClass = ({ isActive }) => {
-  return clsx(s.link, isActive && s.active);
-};
+// const buildLinkClass = ({ isActive }) => {
+//   return clsx(s.link, isActive && s.active);
+// };
 
 // saliwan321@mail.com
 
 const Header = () => {
-  const isLoggedIn = useSelector(selectIsLogggedIn);
-  const user = useSelector(selectUser);
-  const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <div className={s.wrapper}>
       <div className={s.home_box}>
-        <NavLink to="/">
+        {/* <NavLink to="/">
           <img
             src="/public/phonebook_logo.png"
             alt="logo"
@@ -30,37 +27,20 @@ const Header = () => {
           to="/"
         >
           Home
-        </NavLink>
+        </NavLink> */}
       </div>
       <div className={s.box}>
-        {isLoggedIn && <h3 className={s.title}>Welcome, {user.name}!</h3>}
-        <NavLink
+        {/* <NavLink
           className={buildLinkClass}
           to="/contacts"
         >
           Contacts
-        </NavLink>
+        </NavLink> */}
         {isLoggedIn ? (
-          <button
-            className={s.btn_logout}
-            onClick={() => dispatch(logoutThunk())}
-          >
-            Logout
-          </button>
+          <UserMenu />
         ) : (
           <>
-            <NavLink
-              to="/register"
-              className={buildLinkClass}
-            >
-              Register
-            </NavLink>
-            <NavLink
-              to="/login"
-              className={buildLinkClass}
-            >
-              Login
-            </NavLink>
+            <AuthNav />
           </>
         )}
       </div>

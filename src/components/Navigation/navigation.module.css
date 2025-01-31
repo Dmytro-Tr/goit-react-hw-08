@@ -1,0 +1,17 @@
+.link {
+  text-decoration: none;
+  color: #F5EFE7;
+  transition: color 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.active {
+  color: #e0cbaf;
+  text-decoration: underline;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
