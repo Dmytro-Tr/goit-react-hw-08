@@ -17,12 +17,21 @@ const Header = () => {
   const dispatch = useDispatch();
   return (
     <div className={s.wrapper}>
-      <NavLink
-        className={buildLinkClass}
-        to="/"
-      >
-        Home
-      </NavLink>
+      <div className={s.home_box}>
+        <NavLink to="/">
+          <img
+            src="/public/phonebook_logo.png"
+            alt="logo"
+            width={45}
+          />
+        </NavLink>
+        <NavLink
+          className={buildLinkClass}
+          to="/"
+        >
+          Home
+        </NavLink>
+      </div>
       <div className={s.box}>
         {isLoggedIn && <h3 className={s.title}>Welcome, {user.name}!</h3>}
         <NavLink
@@ -32,7 +41,12 @@ const Header = () => {
           Contacts
         </NavLink>
         {isLoggedIn ? (
-          <button onClick={() => dispatch(logoutThunk())}>Logout</button>
+          <button
+            className={s.btn_logout}
+            onClick={() => dispatch(logoutThunk())}
+          >
+            Logout
+          </button>
         ) : (
           <>
             <NavLink

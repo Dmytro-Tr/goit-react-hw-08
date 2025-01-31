@@ -3,11 +3,20 @@
   gap: 20px;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 15px;
   padding: 15px 20px;
   background-color: rgb(57, 70, 91)
+}
+
+.home_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-shrink: 0;
 }
 
 .link {
@@ -26,9 +35,29 @@
 
 .box {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
 .title {
   font-size: 24px;
+}
+
+.btn_logout {
+  padding: 8px 8px;
+  display: block;
+  margin: 0 auto;
+  background-color: #F5EFE7;
+  color: #213555;
+  font-weight: 600;
+  border: 1px solid #000;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  transition: background-color 250ms ease-in-out;
+}
+
+.btn_logout:hover {
+  background-color: #D8C4B6;
 }
