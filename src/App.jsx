@@ -32,14 +32,11 @@ const App = () => {
         <Routes>
           {/* <Route path="/" element={<Layout />}> */}
           <Route index element={<HomePage />} />
-          <Route
-            path="/register"
-            element={<RestrictedRoute redirectTo="/contacts" component={<RegistrationForm />} />}
-          />
-          <Route path="/login" element={<RestrictedRoute redirectTo="/contacts" component={<LoginForm />} />} />
+          <Route path="/register" element={<RestrictedRoute> {<RegistrationForm />} </RestrictedRoute>} />
+          <Route path="/login" element={<RestrictedRoute> {<LoginForm />} </RestrictedRoute>} />
           {/* </Route> */}
           <Route path="*" element={<NotFound />} />
-          <Route path="contacts" element={<PrivateRoute redirectTo="/login" component={<ContactsPage />} />} />
+          <Route path="contacts" element={<PrivateRoute>{<ContactsPage />}</PrivateRoute>} />
         </Routes>
       </Layout>
     </div>
