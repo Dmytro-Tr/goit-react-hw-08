@@ -1,0 +1,20 @@
+.wrapper {
+  padding: 20px;
+}
+
+.title {
+  margin-bottom: 40px;
+}
+
+.text {
+  margin-bottom: 20px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+  list-style: none;
+}
