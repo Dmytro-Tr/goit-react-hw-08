@@ -9,16 +9,10 @@ const AuthNav = () => {
 
   return (
     <div className={s.home_box}>
-      <NavLink
-        to="/register"
-        className={buildLinkClass}
-      >
+      <NavLink to="/register" className={buildLinkClass}>
         Register
       </NavLink>
-      <NavLink
-        to="/login"
-        className={buildLinkClass}
-      >
+      <NavLink to="/login" className={buildLinkClass}>
         Login
       </NavLink>
     </div>

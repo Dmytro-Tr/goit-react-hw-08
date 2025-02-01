@@ -1,8 +1,7 @@
 import { useDispatch } from "react-redux";
-import s from "./contact.module.css";
 import { RiContactsFill, RiPhoneFill } from "react-icons/ri";
 import { deleteContact } from "../../redux/contacts/operations";
-// import { deleteContact } from "../../redux/contactsOps";
+import s from "./contact.module.css";
 
 const Contact = (item) => {
   const dispatch = useDispatch();
@@ -24,10 +23,7 @@ const Contact = (item) => {
           <p>{item.number}</p>
         </div>
       </div>
-      <button
-        className={s.button}
-        onClick={handleDelete}
-      >
+      <button className={s.button} onClick={handleDelete}>
         Delete
       </button>
     </li>

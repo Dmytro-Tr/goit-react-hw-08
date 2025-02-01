@@ -1,10 +1,10 @@
-import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useId } from "react";
-import * as Yup from "yup";
-import s from "./contactForm.module.css";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
+import { ErrorMessage, Field, Form, Formik } from "formik";
+import * as Yup from "yup";
 import { addContact } from "../../redux/contacts/operations";
+import s from "./contactForm.module.css";
 
 const ContactForm = () => {
   const nameId = useId();
@@ -36,42 +36,17 @@ const ContactForm = () => {
 
   return (
     <div className={s.wrapper}>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-        validationSchema={feedbackSchema}
-      >
+      <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={feedbackSchema}>
         <Form className={s.form}>
           <label htmlFor={nameId}>Name: </label>
-          <Field
-            type="text"
-            name="name"
-            id={nameId}
-            className={s.input}
-          />
-          <ErrorMessage
-            name="name"
-            component="span"
-            className={s.error}
-          />
+          <Field type="text" name="name" id={nameId} className={s.input} />
+          <ErrorMessage name="name" component="span" className={s.error} />
 
           <label htmlFor={numberId}>Number: </label>
-          <Field
-            type="tel"
-            name="number"
-            id={numberId}
-            className={s.input}
-          />
-          <ErrorMessage
-            name="number"
-            component="span"
-            className={s.error}
-          />
+          <Field type="tel" name="number" id={numberId} className={s.input} />
+          <ErrorMessage name="number" component="span" className={s.error} />
 
-          <button
-            type="submit"
-            className={s.button}
-          >
+          <button type="submit" className={s.button}>
             Add contact
           </button>
         </Form>
