@@ -14,7 +14,7 @@ const Navigation = () => {
   return (
     <nav className={s.nav}>
       <NavLink to="/">
-        <img src="/public/phonebook_logo.png" alt="logo" width={45} />
+        <img src="../../../public/phonebook_logo.png" alt="logo" width={45} />
       </NavLink>
       <NavLink className={buildLinkClass} to="/">
         Home
